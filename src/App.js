@@ -1,9 +1,13 @@
 import './App.scss';
+import Title from './comps/Title';
+import Upload from './comps/Upload';
 
 function App() {
   return (
     <div className="App">
-      <h1>dev dev dev</h1>
+      <Title />
+      <Upload />
+
     </div>
   );
 }
