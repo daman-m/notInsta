@@ -11,7 +11,7 @@ const useStorage = (file) => {
 
     useEffect( () => {
         //REFERENCES
-        console.log(projectStorage)
+        console.log( )
 
         const storageRef = ref(projectStorage,file.name);
         console.log(storageRef);
