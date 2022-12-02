@@ -19,12 +19,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
 // this is our project storage - when we want to interact with storage we use the var below
 const projectStorage = getStorage();
 
 // this is firestore database - use var below to interact with it 
-const projectFireStore = getFirestore();
+const projectFireStore = getFirestore(app);
 
 export { projectFireStore, projectStorage};
 

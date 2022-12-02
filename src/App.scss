@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.progressBar {
+  height: 5px;
+  background-color: aqua;
+  margin: 20px 0;
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
