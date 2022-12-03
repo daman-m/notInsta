@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { projectStorage, projectFireStore } from "../firebase/config";
 import {  ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 // this func is responsible for handling file uploads and returning useful values regarding the upload (i.e. the upload prgress and any errors and the IMAGE URL after it is uploaded)
  //this func will take a parameter - which is the file we are trying to upload and it will come from our state in the Upload component
@@ -15,13 +15,9 @@ const useStorage = (file) => {
      
         // reference to where the file will be saved
         const storageRef = ref(projectStorage , file.name);
-        console.log(storageRef);
+        
 
-        const collectionRef = addDoc(collection(projectFireStore, "images"), {
-           url: url 
-        })
-
-        console.log(collectionRef)
+        
 
         const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -39,9 +35,20 @@ const useStorage = (file) => {
                     .then( (url) => setUrl(url) 
                     );
 
+                
             }
         );
 }, [file])
+
+    useEffect( ()=> {
+        if(url) {
+            const collectionRef = addDoc(collection(projectFireStore, "images"), {
+                url: url,
+                createdAt: serverTimestamp()
+            })
+        }
+    }, [url])
+ 
 
     return { progress, url, error }
 

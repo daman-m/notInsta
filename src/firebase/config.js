@@ -25,7 +25,13 @@ const projectStorage = getStorage();
 // this is firestore database - use var below to interact with it 
 const projectFireStore = getFirestore(app);
 
+// timestamp
+// const timestamp = getFirestore(app).
+
+
 export { projectFireStore, projectStorage};
+
+
 
 
 // rules i deleted 

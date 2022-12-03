@@ -1,13 +1,21 @@
 import './App.scss';
+import ImageGrid from './comps/ImageGrid';
 import Title from './comps/Title';
 import Upload from './comps/Upload';
+import useFireStore from './hooks/useFireStore';
+
 
 function App() {
+
   return (
     <div className="App">
       <div className='wrapper'>
         <Title />
         <Upload />
+        <ImageGrid />
+        
+        
+
       </div>
     </div>
   );
