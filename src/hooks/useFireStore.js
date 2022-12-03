@@ -23,7 +23,7 @@ import { collection, onSnapshot } from "firebase/firestore";
         })
 
         
-    }, [collection])
+    }, [])
     
 
     return   { docs }
