@@ -12,7 +12,7 @@ import { collection, onSnapshot } from "firebase/firestore";
     useEffect(() => {
         const colref = collection(projectFireStore, 'images')
 
-          const unsub = onSnapshot(colref, (snapshot) => {
+            onSnapshot(colref, (snapshot) => {
             let images = [];
             snapshot.docs.forEach((doc) => {
                 images.push({...doc.data(), id: doc.id})
