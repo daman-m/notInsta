@@ -12,7 +12,7 @@ import { collection, onSnapshot } from "firebase/firestore";
     useEffect(() => {
         const colref = collection(projectFireStore, 'images')
 
-            onSnapshot(colref, (snapshot) => {
+        onSnapshot(colref, (snapshot) => {
             let images = [];
             snapshot.docs.forEach((doc) => {
                 images.push({...doc.data(), id: doc.id})
@@ -21,9 +21,12 @@ import { collection, onSnapshot } from "firebase/firestore";
             console.log(docs)
         })
         
-    }, [docs])
+    }, [])
+
 
     return   { docs }
 }
+
+
 
 export default useFireStore
