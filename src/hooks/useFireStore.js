@@ -6,7 +6,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 // first we create a hook - a func that takes the images collection as a argument 
 
  const useFireStore = (collect) => {
-    const [docs, setDocs] = useState([])
+    const [setDocs] = useState([])
 
     
     useEffect(() => {
@@ -18,7 +18,6 @@ import { collection, onSnapshot } from "firebase/firestore";
                 images.push({...doc.data(), id: doc.id})
             })
             setDocs(images);
-            console.log(docs)
         })
         
     }, [])
