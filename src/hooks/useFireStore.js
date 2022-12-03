@@ -13,22 +13,22 @@ import { collection, onSnapshot } from "firebase/firestore";
     useEffect(() => {
         const colref = collection(projectFireStore, 'images')
 
-        onSnapshot(colref, (snapshot) => {
+       const unsub = onSnapshot(colref, (snapshot) => {
             let images = [];
             snapshot.docs.forEach((doc) => {
-                images.push({...doc.data(), id: doc.id})
+            images.push({...doc.data(), id: doc.id})
             })
+
             setDocs(images);
             console.log(docs)
+
         })
 
-        
-    }, [])
+        return () => unsub();
+    }, [collect])
     
 
     return   { docs }
 }
-
-
 
 export default useFireStore
