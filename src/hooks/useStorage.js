@@ -37,7 +37,7 @@ const useStorage = (file) => {
 
     useEffect( ()=> {
         if(url) {
-            const collectionRef = addDoc(collection(projectFireStore, "images"), {
+             addDoc(collection(projectFireStore, "images"), {
                 url: url,
                 createdAt: serverTimestamp()
             })

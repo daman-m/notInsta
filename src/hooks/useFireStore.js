@@ -21,7 +21,7 @@ import { collection, onSnapshot } from "firebase/firestore";
             console.log(docs)
         })
         
-    }, [collect])
+    }, [docs])
 
     return   { docs }
 }
