@@ -16,9 +16,6 @@ const useStorage = (file) => {
         // reference to where the file will be saved
         const storageRef = ref(projectStorage , file.name);
         
-
-        
-
         const uploadTask = uploadBytesResumable(storageRef, file);
 
         uploadTask.on(
@@ -33,9 +30,7 @@ const useStorage = (file) => {
             ()=> {
                 getDownloadURL(uploadTask.snapshot.ref)
                     .then( (url) => setUrl(url) 
-                    );
-
-                
+                    );   
             }
         );
 }, [file])
@@ -47,13 +42,7 @@ const useStorage = (file) => {
                 createdAt: serverTimestamp()
             })
         }
-    }, [url])
- 
-
+    }, [url]) 
     return { progress, url, error }
-
-
-
 }
-
 export default useStorage;

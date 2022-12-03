@@ -2,7 +2,6 @@ import './App.scss';
 import ImageGrid from './comps/ImageGrid';
 import Title from './comps/Title';
 import Upload from './comps/Upload';
-import useFireStore from './hooks/useFireStore';
 
 
 function App() {
