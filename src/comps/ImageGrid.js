@@ -9,15 +9,21 @@ const ImageGrid = () => {
     
 
     return (
-        <div className="imgGrid">
-            
+        <div className="imgGallery">
+            <div className="wrapper">
+                <h2>Chekc it out yooo ahahaha</h2>
+                <ul className="galleryFlex">
+                
             { docs && docs.map( doc => (
-                <div className="imgWrap" key={doc.id}>
-                    <p></p>
+                <li className="imgContainer" key={doc.id}>
                     <img src={doc.url} alt="uploaded pic" />
-                </div>
+                </li>
             )) }
-            <p>hi</p>
+                </ul>
+
+
+            </div>
+            
         </div>
     )
     }
