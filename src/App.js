@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 import ImageGrid from './comps/ImageGrid';
 import Title from './comps/Title';
 import Upload from './comps/Upload';
@@ -13,9 +13,6 @@ function App() {
         <Upload />
         <ImageGrid />
         
-        
-        
-
       </div>
     </div>
   );

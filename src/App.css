@@ -45,10 +45,18 @@
 
 .progressBar {
   height: 5px;
-  background-color: aqua;
+  background-color: #8AAAE5;
   margin: 20px 0;
   border-radius: 5%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+  color: #8AAAE5;
+}
+html {
+  background-color: #424651;
+  color: whitesmoke;
 }
 
 .imgContainer {
@@ -56,10 +64,55 @@
 }
 
 img {
-  width: 400px;
+  max-width: 100%;
+  display: block;
 
 }
 
-* {
+/* * {
   border: 1px red solid;
+} */
+
+.galleryFlex {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.galleryFlex li {
+  width: calc((100% / 3) - 20px);
+  margin: 0 9px 20px;
+}
+
+input {
+  display: none;
+}
+
+label {
+  background-color: #8AAAE5;
+  color: whitesmoke;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  line-height: 1.4;
+  font-size: 2rem;
+}
+
+label:hover {
+  background-color: whitesmoke;
+  color: #8AAAE5;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  padding: 2px;
+}
+
+form {
+  height: 55px;
+  margin-bottom: 30px;
 }

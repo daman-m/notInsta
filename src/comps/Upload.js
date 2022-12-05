@@ -41,7 +41,8 @@ const Upload = () => {
     }
     return (
         <form>
-            <input onChange={changeHandler} type="file" />
+            <input onChange={changeHandler} type="file" name="file" id="file" />
+            <label htmlFor="file" > + </label>
             <div className="output">
             {/*below we are using ternary operators to check if there is an error of file present, AND depending on which is present, a div will be created displaying the error msg or the file name   */}
             {error && <div className="error"> { error }</div> }
