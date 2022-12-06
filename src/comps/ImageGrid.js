@@ -1,11 +1,15 @@
 // import { useState } from "react";
 import useFireStore from "../hooks/useFireStore";
+import ScrollButton from "./ScrollButton";
+
+
 
 
 const ImageGrid = () => {
 
     const { docs } = useFireStore('images');
     console.log(docs)
+
     
 
     return (
@@ -19,8 +23,7 @@ const ImageGrid = () => {
                 </li>
             )) }
                 </ul>
-
-
+                <ScrollButton />
             </div>
             
         </div>
