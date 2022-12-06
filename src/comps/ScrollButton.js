@@ -16,9 +16,9 @@ const ScrollButton = () => {
     return (
         <div className='scroller'>
             {toTop && (
-            <a href="#" className="toTop" >
+            <button href="#" className="toTop" >
                 <i className="fa-solid fa-arrow-up"></i>
-            </a>
+            </button>
             ) }
         </div>
     )
