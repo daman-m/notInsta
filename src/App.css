@@ -133,6 +133,8 @@ form {
   text-decoration: none;
   transition: all.4s;
   cursor: pointer;
+  appearance: none;
+  border: none;
 }
 
 .toTop:hover {

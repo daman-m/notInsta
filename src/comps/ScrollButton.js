@@ -13,10 +13,15 @@ const ScrollButton = () => {
         })
     }, [])
     
+    const scrollUp = () => {
+        window.scrollTo({
+            top: 0
+        })
+    }
     return (
         <div className='scroller'>
             {toTop && (
-            <button href="#" className="toTop" >
+            <button href="#" className="toTop" onClick={scrollUp}>
                 <i className="fa-solid fa-arrow-up"></i>
             </button>
             ) }
