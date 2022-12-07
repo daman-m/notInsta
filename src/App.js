@@ -20,6 +20,9 @@ function App() {
 
 export default App;
 
+// 1: Upload Component - grab user file
+// 2: useStorage Hook - func that takes user file as param and stores it in the firebase storage while returning a image url and timestamp 
+
 
 
 // set up firebase storage and  firebase firestore
