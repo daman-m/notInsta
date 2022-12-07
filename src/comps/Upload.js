@@ -37,8 +37,8 @@ const Upload = () => {
             setError('Please select an image file (png or jpeg)')
 
         }
-        console.log(selected)
     }
+    
     return (
         <form>
             <input onChange={changeHandler} type="file" name="file" id="file" />

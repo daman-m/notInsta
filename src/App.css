@@ -151,9 +151,11 @@ form {
     
 
   }
-  .galleryFlex {
+  
+
+  /* .galleryFlex:first-child {
     align-items: baseline;
-  }
+  } */
 }
 
 @media (max-width:542px) {
@@ -161,5 +163,4 @@ form {
   .galleryFlex li {
     width: 100%;
   }
-  
 }

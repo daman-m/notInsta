@@ -15,7 +15,8 @@ const ScrollButton = () => {
     
     const scrollUp = () => {
         window.scrollTo({
-            top: 0
+            top: 0,
+            behavior: 'smooth'
         })
     }
     return (
