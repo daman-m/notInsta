@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 const ProgressBar = ({file, setFile }) => {
     const {url, progress} = useStorage(file);
-    console.log(progress, url)
 
     useEffect(()=>{
         if (url) {

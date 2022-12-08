@@ -8,7 +8,6 @@ import ScrollButton from "./ScrollButton";
 const ImageGrid = () => {
 
     const { docs } = useFireStore('images');
-    console.log(docs)
 
     
 

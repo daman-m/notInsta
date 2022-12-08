@@ -28,7 +28,6 @@ const useFireStore = (collect) => {
             })
 
             setDocs(images);
-            console.log(images)
         })
 
         return () => unsub();
