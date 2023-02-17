@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ProgressBar from "./ProgressBar";
 
+// Step 1 :Upload Forum
+
 
 // func to for user to upload images 
 const Upload = () => {
@@ -21,6 +23,7 @@ const Upload = () => {
     //  func - addevent handler on the form input 
     // listens for any change 
     const changeHandler = (e) => {
+        
         //save user selection to a var
         let selected = e.target.files[0];
 
