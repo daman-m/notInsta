@@ -1,12 +1,13 @@
-import './App.css';
+import '<div className="" />App.css';
 import Home from './Routes/Home';
 import { ChakraProvider } from '@chakra-ui/react';
-
+import { RouterProvider } from 'react-router-dom';
+import { router } from 'Routes/routes';
 import { Link, Routes, Route } from 'react-router-dom';
-import MostLiked from './Routes/MostLiked';
-import Shared from './Routes/Shared';
-import UserLogin from './Routes/UserLogin';
-import NewUser from './Routes/NewUser';
+// import MostLiked from './Routes/MostLiked';
+// import Shared from './Routes/Shared';
+// import UserLogin from './Routes/UserLogin';
+// import NewUser from './Routes/NewUser';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <div className="App">
         <div className='wrapper'>
         <header className="title App">
-              <h1> <Link className='home' to="/">NotInsta</Link></h1>
+              <h1> <Link className='home'>NotInsta</Link></h1>
               <ul className='signInUp'>
                 <li>
                   <Link className='button' to="/UserLogin">Login</Link>
@@ -40,15 +41,16 @@ function App() {
 
       
       
-        <Routes>
+        </div>
+      </div>
+        {/* <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/UserLogin' element={<UserLogin />} />
           <Route path='/NewUser' element={<NewUser />} />
           <Route path='/MostLiked' element={<MostLiked />} />
           <Route path="/Shared" element={<Shared />} />
-        </Routes>
-        </div>
-      </div>
+        </Routes> */}
+        <RouterProvider router={router}/>
     </ChakraProvider>
   );
 }
