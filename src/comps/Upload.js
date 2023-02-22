@@ -23,7 +23,7 @@ const Upload = () => {
     //  func - addevent handler on the form input 
     // listens for any change 
     const changeHandler = (e) => {
-        
+
         //save user selection to a var
         let selected = e.target.files[0];
 
@@ -43,9 +43,9 @@ const Upload = () => {
     }
     
     return (
-        <form>
-            <input onChange={changeHandler} type="file" name="file" id="file" />
-            <label htmlFor="file" > + </label>
+        <form className="uploadForm">
+            <input className="uploadPic" onChange={changeHandler} type="file" name="file" id="file" />
+            <label  className="plusSign" htmlFor="file" > + </label>
             <div className="output">
             {/*below we are using ternary operators to check if there is an error of file present, AND depending on which is present, a div will be created displaying the error msg or the file name   */}
             {error && <div className="error"> { error }</div> }

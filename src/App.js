@@ -1,20 +1,55 @@
 import './App.css';
-import ImageGrid from './comps/ImageGrid';
-import Title from './comps/Title';
-import Upload from './comps/Upload';
+import Home from './Routes/Home';
+import { ChakraProvider } from '@chakra-ui/react';
+
+import { Link, Routes, Route } from 'react-router-dom';
+import MostLiked from './Routes/MostLiked';
+import Shared from './Routes/Shared';
+import UserLogin from './Routes/UserLogin';
+import NewUser from './Routes/NewUser';
 
 
 function App() {
 
   return (
-    <div className="App">
-      <div className='wrapper'>
-        <Title />
-        <Upload />
-        <ImageGrid />
-        
+    <ChakraProvider>
+      <div className="App">
+        <div className='wrapper'>
+        <header className="title App">
+              <h1> <Link className='home' to="/">NotInsta</Link></h1>
+              <ul className='signInUp'>
+                <li>
+                  <Link className='button' to="/UserLogin">Login</Link>
+                </li>
+                <li>
+                  <Link className='button' to="/NewUser">Sign Up</Link>
+                </li>
+              </ul>
+          </header>
+
+          <nav>
+            <ul className='navbar'>
+                <li>
+                    <Link className="shared" to="/Shared">Shared Gallery</Link>
+                </li>
+                <li>
+                    <Link className="mostLiked" to="/MostLiked">Most Liked</Link>
+                </li>
+            </ul>
+          </nav>
+
+      
+      
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/UserLogin' element={<UserLogin />} />
+          <Route path='/NewUser' element={<NewUser />} />
+          <Route path='/MostLiked' element={<MostLiked />} />
+          <Route path="/Shared" element={<Shared />} />
+        </Routes>
+        </div>
       </div>
-    </div>
+    </ChakraProvider>
   );
 }
 
