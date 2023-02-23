@@ -1,6 +1,3 @@
-import { useState } from "react"
-import { auth } from "../../firebase/config";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { 
     Center,
     Heading,
@@ -16,24 +13,13 @@ import {
  } from "@chakra-ui/react";
 
 import { Link as RouterLink } from "react-router-dom";
+import { useLogin } from "hooks/auth";
 
 const SignIn = () => {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const {login, isLoading} = useLogin();
 
-    const signIn = (e) => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log(userCredential);
-            }).catch((error) => {
-                console.log(error);
-            })
-
-
-    }
-
+  
     return (
         <Center w="100%" h="100vh" >
             <Box 
@@ -43,7 +29,7 @@ const SignIn = () => {
             borderWidth="1px" 
             borderRadius="lg">
                 <Heading mb="4" size="lg" textAlign="center">Log In</Heading>
-                <form onSubmit={signIn}>
+                <form>
                 <FormControl isInvalid={true} py="2">
                     <FormLabel>Email</FormLabel>
                     <Input type="email" placeholder="user@email.com"/>

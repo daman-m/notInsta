@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate} from "react-router-dom";
 import { useEffect } from "react";
 import { LOGIN } from "Routes/routes";
-import useAuth from "hooks/useAuth";
+import useAuth from "hooks/auth";
 import MyPage from "Routes/MyPage";
 
 const Layout = () => {

@@ -1,5 +1,4 @@
 import 'App.css';
-import Home from './Routes/Home';
 import { ChakraProvider } from '@chakra-ui/react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from 'Routes/routes';
