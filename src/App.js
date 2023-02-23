@@ -1,9 +1,9 @@
-import '<div className="" />App.css';
+import 'App.css';
 import Home from './Routes/Home';
 import { ChakraProvider } from '@chakra-ui/react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from 'Routes/routes';
-import { Link, Routes, Route } from 'react-router-dom';
+// import { Link, Routes, Route } from 'react-router-dom';
 // import MostLiked from './Routes/MostLiked';
 // import Shared from './Routes/Shared';
 // import UserLogin from './Routes/UserLogin';
@@ -17,13 +17,13 @@ function App() {
       <div className="App">
         <div className='wrapper'>
         <header className="title App">
-              <h1> <Link className='home'>NotInsta</Link></h1>
+              <h1>NotInsta</h1>
               <ul className='signInUp'>
                 <li>
-                  <Link className='button' to="/UserLogin">Login</Link>
+                  Login
                 </li>
                 <li>
-                  <Link className='button' to="/NewUser">Sign Up</Link>
+                  Sign Up
                 </li>
               </ul>
           </header>
@@ -31,10 +31,10 @@ function App() {
           <nav>
             <ul className='navbar'>
                 <li>
-                    <Link className="shared" to="/Shared">Shared Gallery</Link>
+                  Shared Gallery
                 </li>
                 <li>
-                    <Link className="mostLiked" to="/MostLiked">Most Liked</Link>
+                    Most Liked
                 </li>
             </ul>
           </nav>
