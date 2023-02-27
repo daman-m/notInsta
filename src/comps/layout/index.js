@@ -2,7 +2,7 @@ import { Outlet, useLocation, useNavigate} from "react-router-dom";
 import { useEffect } from "react";
 import { LOGIN } from "Routes/routes";
 import useAuth from "hooks/auth";
-import MyPage from "Routes/MyPage";
+import Navbar from "comps/navbar";
 
 const Layout = () => {
 
@@ -23,7 +23,8 @@ const Layout = () => {
 
     return (
         <>
-             <Outlet />
+            <Navbar />
+            <Outlet />
         </>
     )
 

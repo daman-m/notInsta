@@ -19,6 +19,8 @@ import { emailValidate, passwordValidate } from "utility/formValidate";
 import { USERDASH } from "Routes/routes";
 const SignIn = () => {
 
+
+  //destructuring object for cleaner code
     const {login, isLoading} = useLogin();
     const {register,
          handleSubmit,
@@ -26,13 +28,17 @@ const SignIn = () => {
            formState: { errors },
         } = useForm();
 
+    // Function to handle the user sign in when button is clicked
     async function handleSignIn(data) {
+        
+        // tries the login with given input data
         const successful = await login({
             email: data.email,
             password: data.password,
             redirectTo: USERDASH
         })
         
+        // resets the form if successful    
         if (successful) reset();
     }
 
@@ -49,6 +55,8 @@ const SignIn = () => {
                 <FormControl isInvalid={errors.email} py="2">
                     <FormLabel>Email</FormLabel>
                     <Input type="email" placeholder="user@email.com" {...register("email", emailValidate)}/>
+                    
+                    {/*FormErrorMessage component to show error if present*/}
                     <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
                  </FormControl>
 
