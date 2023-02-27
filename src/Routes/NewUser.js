@@ -1,11 +1,9 @@
-import AuthDeets from "../comps/auth/AuthDeets"
-import SignUp from "../comps/auth/SignUp"
+import Register from "../comps/auth/Register";
 
 const NewUser = () => {
     return (
         <>
-            <SignUp />
-            <AuthDeets />
+        <Register />
         </>
     )
 }

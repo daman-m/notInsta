@@ -13,27 +13,30 @@ import {
  } from "@chakra-ui/react";
 
 import { Link as RouterLink } from "react-router-dom";
-import { useLogin } from "hooks/auth";
+import { useRegister } from "../../hooks/auth";
 import { useForm } from "react-hook-form";
 import { emailValidate, passwordValidate } from "utility/formValidate";
 import { USERDASH } from "Routes/routes";
-import { REGISTER } from "../../Routes/routes";
+import { LOGIN, REGISTER } from "../../Routes/routes";
+import { usernameValidate } from "../../utility/formValidate";
+
 const SignIn = () => {
 
 
   //destructuring object for cleaner code
-    const {login, isLoading} = useLogin();
+    const {register: signUp, isLoading} = useRegister();
     const {register,
-         handleSubmit,
-          reset,
-           formState: { errors },
+        handleSubmit,
+        reset,
+        formState: { errors },
         } = useForm();
 
     // Function to handle the user sign in when button is clicked
-    async function handleSignIn(data) {
+    async function handleRegister(data) {
         
         // tries the login with given input data
-        const successful = await login({
+        const successful = await signUp({
+            username: data.username,
             email: data.email,
             password: data.password,
             redirectTo: USERDASH
@@ -49,9 +52,17 @@ const SignIn = () => {
         <Center w="100%" h="100vh" >
             <Box  mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg">
                 <Heading mb="4" size="lg"  textAlign="center">
-                    Log In
+                    Register
                 </Heading>
-                <form onSubmit={handleSubmit(handleSignIn)}>
+                <form onSubmit={handleSubmit(handleRegister)}>
+
+                <FormControl isInvalid={errors.username} py="2">
+                    <FormLabel>Username</FormLabel>
+                    <Input placeholder="username" {...register("username", usernameValidate)}/>
+                    
+                    {/*FormErrorMessage component to show error if present*/}
+                    <FormErrorMessage>{errors.username && errors.username.message}</FormErrorMessage>
+                 </FormControl>
 
                 <FormControl isInvalid={errors.email} py="2">
                     <FormLabel>Email</FormLabel>
@@ -74,14 +85,14 @@ const SignIn = () => {
                  size="md" 
                  w="full"
                  isLoading={isLoading} 
-                 loadingText="Logging In">Log In</Button>
+                 loadingText="Logging In">Register</Button>
                 </form>
 
                 <Text fontSize="xlg" align="center" mt="6">
-                Don't have an account? {" "}    
+                Already have an account? {" "}    
                     <Link
                     as={RouterLink} 
-                    to={REGISTER} 
+                    to={LOGIN} 
                     color="#8AAAE5"
                     fontWeight="medium"
                     textDecor="underline"
