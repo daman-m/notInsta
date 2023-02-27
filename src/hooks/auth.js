@@ -46,6 +46,7 @@ export const useLogin = () => {
                 position: "top",
                 duration: 5000
             });
+            setIsLoading(false)
             return false; // Return false if login failed
         }
 
