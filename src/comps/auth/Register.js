@@ -18,7 +18,7 @@ import { useForm } from "react-hook-form";
 import { emailValidate, passwordValidate } from "../../utility/formValidate";
 
 import { USERDASH } from "../../Routes/routes";
-import { LOGIN, REGISTER } from "../../Routes/routes";
+import { LOGIN } from "../../Routes/routes";
 import { usernameValidate } from "../../utility/formValidate";
 
 const SignIn = () => {

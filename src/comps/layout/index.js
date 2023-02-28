@@ -18,7 +18,7 @@ const Layout = () => {
         if (isLoading && pathname.startsWith("/protected") && !user) {
             navigate(LOGIN);
         }
-    },[pathname, user, isLoading])
+    },[pathname, user, isLoading, navigate])
 
     if (isLoading) {
         return "Loading...";

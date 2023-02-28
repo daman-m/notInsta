@@ -15,12 +15,6 @@ function App() {
     <ChakraProvider>
       <div className="App">
         <div className='wrapper'></div>
-    
-    
-
-      
-      
-      
       </div>
         <RouterProvider router={router}/>
     </ChakraProvider>
@@ -29,7 +23,7 @@ function App() {
 
 export default App;
 
- {/* // 1: Upload Component - grab user file
+ /* // 1: Upload Component - grab user file
 // 2: useStorage Hook - func that takes user file as param and stores it in the firebase storage while returning a image url and timestamp 
 
 
@@ -40,4 +34,4 @@ export default App;
 
 // create component for user to choose pic with input="file" and display input using state
 // link uploaded user pic to firebase storage -   
-  // have firebase/firestore make url of pic being uploaded locally   */}
+  // have firebase/firestore make url of pic being uploaded locally   */

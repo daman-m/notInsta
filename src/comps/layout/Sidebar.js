@@ -1,11 +1,9 @@
-import Upload from "../Upload";
-import ProgressBar from "../ProgressBar";
 import { Link } from "react-router-dom";
 import { PROTECTED, USERS } from "../../Routes/routes";
 import useAuth from "../../hooks/auth";
 import Avatar from "../profile/Avatar";
 
-const { Text, Box, Button, Stack, Code } = require("@chakra-ui/react")
+const { Box, Button, Stack, Code } = require("@chakra-ui/react")
 
 const ActiveUser = () => {
     const {user, isLoading } = useAuth();

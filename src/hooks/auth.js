@@ -17,19 +17,20 @@ const useAuth = () => {
 
     useEffect(()=>{
         async function fetchData() {
-            setIsLoading(true);
+            setIsLoading(true)
             const ref = doc(projectFireStore, "users", authUser.uid);
 
             const docSnap = await getDoc(ref);
             setUser(docSnap.data())
-            setIsLoading(false)
+            setIsLoading(!isLoading)
+            
         }
 
         if(!authLoading) {
             if (authUser) fetchData()
             else setIsLoading(false); //Not signed in 
         }
-    },[authLoading])
+    },[authLoading, authUser, isLoading])
 
  return {user , authLoading, error };
 }
@@ -139,7 +140,7 @@ export const useRegister = () => {
 }
 
 export const useLogout = () => {
-    const [signOut, isLoading, error] = useSignOut(auth);
+    const [signOut, isLoading ] = useSignOut(auth);
     const toast = useToast();
     const navigate = useNavigate();
 
