@@ -1,3 +1,4 @@
+import { Heading } from "@chakra-ui/react";
 import React from "react";  
 import { Link } from "react-router-dom";
 
@@ -5,8 +6,8 @@ import { Link } from "react-router-dom";
 const Title = () => {
     return (
         <div className="title App">
-            <h1>NotInsta</h1>
-            <h2>Shared Gallery</h2>
+
+            <Heading>Shared Gallery</Heading>
             <nav>
                 <ul>
                     <li>
@@ -29,7 +30,6 @@ const Title = () => {
                     </li>
                 </ul>
             </nav>
-            <p>This is a shared gallery. Any picture you post will be added to the collection below.</p>
         </div>
     )
 }

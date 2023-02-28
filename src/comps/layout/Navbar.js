@@ -8,14 +8,17 @@ const Navbar = () => {
      
     return (
         <Flex
-        shadow="sm"
+        // shadow="sm"
         pos="fixed"
         width="full"
         borderTop="8px solid"
         borderTopColor="blue.200"
+        borderBottom="1px solid"
+        borderBottomColor="blue.100"
         height="16"
         zIndex="3"
         justify="center"
+        bg="blackAlpha.800"
         >
 
             <Flex px={4} w="full" align="center" maxW="1200px">

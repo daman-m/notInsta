@@ -15,6 +15,8 @@ export const REGISTER = "/register";
 
 export const PROTECTED = "/protected";
 export const USERDASH = "/protected/mypage";
+export const USERS = "/protected/users";
+export const PROFILE = "/protected/profile/:id";
 
 
 
@@ -28,6 +30,11 @@ export const router = createBrowserRouter([
     {path: REGISTER, element: <NewUser />},
     {path: PROTECTED, element: <Layout />, children:[
         {path: USERDASH, element: <MyPage />},
+        {path: USERS, element: "users"},
+        {path: PROFILE, element: "User PROFILE"},
+
+
+
     ]}
 
 ]);

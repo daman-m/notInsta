@@ -1,15 +1,16 @@
 import { Box, Text } from "@chakra-ui/react";
 import ImageGrid from "comps/ImageGrid";
+import Title from "comps/Title";
+import Upload from "../comps/Upload";
 
 const MyPage = () => {
     
     return (
-        <div className="wrapper">
-            <Box paddingTop="16">
-                <Text>Cha</Text>
-            </Box>
+        <>
+            <Title/>
+            <Upload/>
             <ImageGrid />
-        </div>
+        </>
 
     )
 }

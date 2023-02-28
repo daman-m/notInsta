@@ -6,15 +6,33 @@ import { useNavigate } from 'react-router-dom';
 import Home from 'Routes/Home';
 import { LOGIN, USERDASH } from 'Routes/routes';
 import { auth, projectFireStore } from '../firebase/config';
-import { setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc, getDoc } from 'firebase/firestore';
 import isUsernameExists from 'utility/isUsernameExists';
+import { useEffect } from 'react';
 
 const useAuth = () => {
 
-    const [authUser, isLoading, error] = useAuthState(auth); 
-    const [user, setUser] = useState(null)
+    const [authUser, authLoading, error] = useAuthState(auth); 
+    const [isLoading, setIsLoading] = useState(true);
+    const [user, setUser] = useState(null);
 
- return {user: authUser, isLoading, error };
+    useEffect(()=>{
+        async function fetchData() {
+            setIsLoading(true);
+            const ref = doc(projectFireStore, "users", authUser.uid);
+
+            const docSnap = await getDoc(ref);
+            setUser(docSnap.data())
+            setIsLoading(false)
+        }
+
+        if(!authLoading) {
+            if (authUser) fetchData()
+            else setIsLoading(false); //Not signed in 
+        }
+    },[authLoading])
+
+ return {user , authLoading, error };
 }
 
 export const useLogin = () => {
@@ -89,7 +107,8 @@ export const useRegister = () => {
                     id: res.user.uid,
                     username: username.toLowerCase(),
                     userUploads: [],
-                    date: Date.now()
+                    date: Date.now(),
+                    avatar: ""
                 });
 
                 toast({
@@ -135,7 +154,7 @@ export const useLogout = () => {
                     position: "top",
                     duration: 5000
                 })
-                navigate(Home);
+                navigate(LOGIN);
             }
     }
     return { logout, isLoading};

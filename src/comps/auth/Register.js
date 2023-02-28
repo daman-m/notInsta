@@ -97,7 +97,7 @@ const SignIn = () => {
                     fontWeight="medium"
                     textDecor="underline"
                     _hover={{background: "whitesmoke"}}
-                    >Register</Link>
+                    >Log In </Link>
                     {" "} instead!
                 </Text>
             </Box>
