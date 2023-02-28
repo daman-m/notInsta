@@ -1,7 +1,7 @@
-import 'App.css';
+import "./App.css"
 import { ChakraProvider } from '@chakra-ui/react';
 import { RouterProvider } from 'react-router-dom';
-import { router } from 'Routes/routes';
+import { router } from "./Routes/routes";
 // import { Link, Routes, Route } from 'react-router-dom';
 // import MostLiked from './Routes/MostLiked';
 // import Shared from './Routes/Shared';
@@ -14,9 +14,7 @@ function App() {
   return (
     <ChakraProvider>
       <div className="App">
-        <div className='wrapper'>
-          
-        </div>
+        <div className='wrapper'></div>
     
     
 

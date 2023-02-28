@@ -1,7 +1,7 @@
 import { Button, Flex, Link } from "@chakra-ui/react"
-import { USERDASH } from "Routes/routes";
+import { USERDASH } from "../../Routes/routes";
 import { Link as RouterLink } from "react-router-dom";
-import { useLogout } from "hooks/auth";
+import { useLogout } from "../../hooks/auth";
 
 const Navbar = () => {
     const {logout, isLoading} = useLogout();

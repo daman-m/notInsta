@@ -3,11 +3,10 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 import { useState } from 'react';
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import Home from 'Routes/Home';
-import { LOGIN, USERDASH } from 'Routes/routes';
+import { LOGIN, USERDASH } from '../Routes/routes';
 import { auth, projectFireStore } from '../firebase/config';
 import { setDoc, doc, getDoc } from 'firebase/firestore';
-import isUsernameExists from 'utility/isUsernameExists';
+import isUsernameExists from "../utility/isUsernameExists";
 import { useEffect } from 'react';
 
 const useAuth = () => {

@@ -15,8 +15,9 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { useRegister } from "../../hooks/auth";
 import { useForm } from "react-hook-form";
-import { emailValidate, passwordValidate } from "utility/formValidate";
-import { USERDASH } from "Routes/routes";
+import { emailValidate, passwordValidate } from "../../utility/formValidate";
+
+import { USERDASH } from "../../Routes/routes";
 import { LOGIN, REGISTER } from "../../Routes/routes";
 import { usernameValidate } from "../../utility/formValidate";
 

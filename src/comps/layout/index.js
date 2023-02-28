@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate} from "react-router-dom";
 import { useEffect } from "react";
-import { LOGIN } from "Routes/routes";
-import useAuth from "hooks/auth";
+import { LOGIN } from "../../Routes/routes";
+import useAuth from "../../hooks/auth";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { Box, Flex } from "@chakra-ui/react";

@@ -3,7 +3,7 @@ import Home from "./Home";
 import MyPage from "./MyPage";
 import NewUser from "./NewUser";
 import UserLogin from "./UserLogin";
-import Layout from "comps/layout";
+import Layout from "../comps/layout";
 
 
 // EXPORTING ROUTES

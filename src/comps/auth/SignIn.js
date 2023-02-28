@@ -13,10 +13,10 @@ import {
  } from "@chakra-ui/react";
 
 import { Link as RouterLink } from "react-router-dom";
-import { useLogin } from "hooks/auth";
+import { useLogin } from "../../hooks/auth";
 import { useForm } from "react-hook-form";
-import { emailValidate, passwordValidate } from "utility/formValidate";
-import { USERDASH } from "Routes/routes";
+import { emailValidate, passwordValidate } from "../../utility/formValidate"
+import { USERDASH } from "../../Routes/routes";
 import { REGISTER } from "../../Routes/routes";
 const SignIn = () => {
 

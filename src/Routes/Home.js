@@ -1,4 +1,4 @@
-import Title from "comps/Title";
+import Title from "../comps/Title";
 import ImageGrid from "../comps/ImageGrid"
 
 const Home = () => {

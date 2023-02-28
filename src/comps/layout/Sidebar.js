@@ -1,4 +1,4 @@
-import Upload from "comps/Upload";
+import Upload from "../Upload";
 import ProgressBar from "../ProgressBar";
 import { Link } from "react-router-dom";
 import { PROTECTED, USERS } from "../../Routes/routes";
