@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { Box, Image, Center} from "@chakra-ui/react";
 import useFireStore from "../hooks/useFireStore";
 import ScrollButton from "./ScrollButton";
 
@@ -12,20 +13,21 @@ const ImageGrid = () => {
     
 
     return (
-        <div className="imgGallery">
-            <div className="wrapper">
-                <ul className="galleryFlex">
-                {/* THE PICTURES */}
-            { docs && docs.map( doc => (
-                <li className="imgContainer" key={doc.id}>
-                    <img src={doc.url} alt="uploaded pic" />
-                </li>
-            )) }
-                </ul>
-                <ScrollButton />
-            </div>
-            
-        </div>
+        <>
+            <Center my="5" marginTop="10">
+                <Box maxH="420px" border="1px solid" maxW="420">
+                { docs && docs.map( doc => (
+                    <Box className="imgContainer" key={doc.id} my="5">
+                        <Image
+                        objectFit="cover"
+                         src={doc.url} 
+                         alt="uploaded pic" />
+                    </Box>
+                )) }
+                </Box>
+            </Center>
+            <ScrollButton/>
+        </>
     )
     }
 

@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ProgressBar from "./ProgressBar";
+import { FormControl, HStack, Input, FormLabel, Heading, Button, Box } from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
 
 // Step 1 :Upload Forum
 
@@ -19,6 +21,16 @@ const Upload = () => {
     // make array of allowed file types to reference in our conditional statement 
     const types = [ 'image/png', 'image/jpeg'];
 
+    //rest fun from react-hook-form
+    const {reset} = useForm()
+
+    //create ref to the file input element
+    const inputRef = useRef()
+
+    //func to trigger click event on the file input element
+    const handleUploadClick = () => {
+        inputRef.current.click();
+    }
 
     //  func - addevent handler on the form input 
     // listens for any change 
@@ -40,18 +52,53 @@ const Upload = () => {
             setError('Please select an image file (png or jpeg)')
 
         }
+        reset()
+        
     }
     
     return (
-        <form className="uploadForm">
-            <input className="uploadPic" onChange={changeHandler} type="file" name="file" id="file" />
-            <label  className="plusSign" htmlFor="file" > + </label>
-            <div className="output">
-            {/*below we are using ternary operators to check if there is an error of file present, AND depending on which is present, a div will be created displaying the error msg or the file name   */}
+        <form>
+            <HStack margin="5" justify="space-between" py="10px" borderBottom="2px" borderColor="blue.200">
+                <Heading
+                fontSize="2xl"
+                color="blue.200">
+                    New Post
+                </Heading>
+                <FormControl width="fit-content">
+                {/* Hidden file input element */}
+                    <Input
+                    ref={inputRef}
+                    onChange={changeHandler}
+                    type="file"
+                    id="file"
+                    accept="image/*"
+                    display="none"
+                    />
+                    <FormLabel htmlFor="file">
+                        {/* Button to trigger file input click event */}
+                        <Button 
+                        cursor="pointer" 
+                        onClick={handleUploadClick}
+                        border="2px"
+                        borderRadius="md"
+                        borderColor="blue.200"
+                        bg="whiteAlpha.400"
+                        color="blue.200"
+                        fontWeight="semibold"
+                        _hover={{bg: "blackAlpha.100"}}
+
+                        >
+                        Upload
+                        </Button>
+                    </FormLabel>
+                </FormControl>
+            </HStack>
+            
+            <Box>
             {error && <div className="error"> { error }</div> }
             {file && <div> { file.name } </div>}
             {file && <ProgressBar  file={file} setFile={setFile} />}
-            </div>
+            </Box>
         </form>
     )
 }

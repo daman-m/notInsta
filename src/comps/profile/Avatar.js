@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import {  PROTECTED } from "../../Routes/routes"
 
 const Avatar = ({user}) => {
-
-    console.log(user)
    
     return (
         <ChakraAvi

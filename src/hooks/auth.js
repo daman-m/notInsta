@@ -102,8 +102,8 @@ export const useRegister = () => {
         } else {
             try{
                 const res = await createUserWithEmailAndPassword(auth, email, password)
-
-                await setDoc(doc(projectFireStore, "users", res.user.uid), {
+                
+                 await setDoc(doc(projectFireStore, "users", res.user.uid), {
                     id: res.user.uid,
                     username: username.toLowerCase(),
                     userUploads: [],
