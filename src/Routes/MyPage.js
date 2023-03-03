@@ -1,5 +1,5 @@
 // import { Box, Text } from "@chakra-ui/react";
-import ImageGrid from "../comps/ImageGrid";
+import ImageList from "../comps/posts/ImageList";
 import Upload from "../comps/Upload";
 
 
@@ -7,7 +7,7 @@ const MyPage = () => {
     return (
         <>
             <Upload/>
-            <ImageGrid />
+            <ImageList />
         </>
 
     )

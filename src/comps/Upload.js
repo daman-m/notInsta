@@ -3,11 +3,15 @@ import ProgressBar from "./ProgressBar";
 import { FormControl, HStack, Input, FormLabel, Heading, Button, Box } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 
+
 // Step 1 :Upload Forum
 
 
 // func to for user to upload images 
 const Upload = () => {
+
+    // const{postref} = useStorage()
+    
 
     // need to create state for file as it will be changing everytime user selects - 
         //therefore page will be rerendering so we have to setState to update it  
@@ -28,8 +32,10 @@ const Upload = () => {
     const inputRef = useRef()
 
     //func to trigger click event on the file input element
-    const handleUploadClick = () => {
+    const handleUploadClick = (data) => {
         inputRef.current.click();
+        // console.log(postref);
+
     }
 
     //  func - addevent handler on the form input 
