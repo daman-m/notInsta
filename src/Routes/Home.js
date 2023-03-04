@@ -1,5 +1,4 @@
 import Title from "../comps/Title";
-import ImageList from "../comps/posts/ImageList"
 import { Box, Heading , Link } from "@chakra-ui/react";
 import { Link as routerLink } from "react-router-dom";
 import { REGISTER } from "./routes";
@@ -23,7 +22,7 @@ const Home = () => {
                 color="blue.200"
                 >Sign up</Link> and spread the love :) </Heading>
                 
-            <ImageList /> 
+            {/* <ImageList />  */}
             </Box>
         </Box>
     )

@@ -2,7 +2,7 @@ import { Avatar as ChakraAvi } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import {  PROTECTED } from "../../Routes/routes"
 
-const Avatar = ({user, size="xl"}) => {
+const Avatar = ({user, size="xl", }) => {
    
     return (
         <ChakraAvi
