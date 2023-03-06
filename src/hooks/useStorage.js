@@ -12,12 +12,15 @@ import useAuth from "./auth";
  //use projectStorage to upload the user file 
 export const useStorage = (file) => {
 
-    const {user} = useAuth()
+     const {user} = useAuth()
 
+
+    
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
 
+    
     // the code we need to get  the progress, error, and url needs to run everytime we get a new file value - which is the state we set in the Upload comp - therefore we use a useEffect with the file as dependancy 
     useEffect( () => {
      
@@ -48,18 +51,18 @@ export const useStorage = (file) => {
 
 
    useEffect( ()=> {
-       if(url) {
-               const id = uuidv4();
+       if(url && user) {
+            const id = uuidv4();
                 setDoc(doc(projectFireStore, "images", id), {
                    url: url,
                    createdAt: serverTimestamp(),
                    likes: [],
                    id,
-                   uid: user.id 
+                   uid: user.id,
+                   date: Date.now()
                }) 
-            //    console.log(postref);
            }
-       }, [url, user.id]) 
+       }, [url, user?.id, user]) 
        return {progress, url, error }
 }
 

@@ -24,7 +24,7 @@ const ImageList = () => {
                     borderColor="gray.100"
                     borderRadius="md">
 
-                        <PostHeader uid={doc.uid} />
+                        <PostHeader uid={doc.uid} date={doc.date} />
                         <Image
                         maxH="420px"
                          maxW="420" 

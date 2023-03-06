@@ -1,8 +1,9 @@
 import {  Box, Button, Flex, Text } from "@chakra-ui/react"
 import Avatar from "../profile/Avatar";
 import useUser from "../../hooks/useUser";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-const PostHeader = ({uid}) => {
+const PostHeader = ({uid, date}) => {
 
     const {user,isLoading} = useUser(uid)
 
@@ -18,12 +19,13 @@ const PostHeader = ({uid}) => {
         <Avatar user={user} size="sm" />
 
         <Box ml="4">
-            <Button
+            <Button padding="0" margin="0"            border="1px solid red"
             colorScheme="blue"
             variant="Link"
-            > {user.username}</Button>
+
+            > @{user.username}</Button>
             <Text fontSize="sm" color="gray.500">
-                2h ago
+                {formatDistanceToNow(date)}ago
             </Text>
         </Box>
         </Flex>
