@@ -2,7 +2,7 @@ import { Avatar as ChakraAvi } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import {  PROTECTED } from "../../Routes/routes"
 
-const Avatar = ({user, size="xl", }) => {
+const Avatar = ({user, size="xl", overrideAvatar=null }) => {
    
     return (
         <ChakraAvi
@@ -10,7 +10,7 @@ const Avatar = ({user, size="xl", }) => {
             to={`${PROTECTED}/profile/${user?.id}`}
             name={user?.username}
             size={size}
-            src={user?.avatar}
+            src={overrideAvatar || user?.avatar}
             _hover={{cursor:"pointer", opacity:"0.8"}}
             />
             )

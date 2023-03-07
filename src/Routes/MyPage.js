@@ -1,6 +1,6 @@
 // import { Box, Text } from "@chakra-ui/react";
 import ImageList from "../comps/posts/ImageList";
-import Upload from "../comps/Upload";
+import Upload from "../comps/posts/Upload";
 
 
 const MyPage = () => {
