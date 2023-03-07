@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import { Box, Image, Center} from "@chakra-ui/react";
 import useFireStore from "../../hooks/useFireStore";
+import Actions from "./Actions";
 import PostHeader from "./PostHeader";
 import ScrollButton from "./ScrollButton";
 
@@ -11,7 +12,6 @@ const ImageList = () => {
 
     const { docs } = useFireStore('images');
     
-
     return (
         <>
             <Center my="5" marginTop="10">
@@ -32,6 +32,7 @@ const ImageList = () => {
                         borderBottomRadius="md"
                          src={doc.url} 
                          alt="uploaded pic" />
+                         <Actions doc={doc}/>
                     </Box>
                 ))
                 }

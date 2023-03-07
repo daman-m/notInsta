@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.43.2",
+    "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "sass-loader": "^13.2.0",

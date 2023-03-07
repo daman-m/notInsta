@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 const useAuth = () => {
 
     const [authUser, authLoading, error] = useAuthState(auth); 
-    const [isLoading, setIsLoading] = useState(true);
+    const setIsLoading = useState(true)[1];
     const [user, setUser] = useState(null);
 
     useEffect(()=>{
@@ -22,15 +22,14 @@ const useAuth = () => {
 
             const docSnap = await getDoc(ref);
             setUser(docSnap.data())
-            setIsLoading(!isLoading)
-            
+            setIsLoading(i => !i) // use a functional update here
         }
 
         if(!authLoading) {
             if (authUser) fetchData()
             else setIsLoading(false); //Not signed in 
         }
-    },[authLoading, authUser, isLoading])
+    },[authLoading, authUser, setIsLoading])
 
  return {user , authLoading, error };
 }

@@ -4,6 +4,7 @@ import MyPage from "./MyPage";
 import NewUser from "./NewUser";
 import UserLogin from "./UserLogin";
 import Layout from "../comps/layout";
+import Comments from "../comps/posts/comments/Comments"
 
 
 // EXPORTING ROUTES
@@ -17,6 +18,7 @@ export const PROTECTED = "/protected";
 export const USERDASH = "/protected/mypage";
 export const USERS = "/protected/users";
 export const PROFILE = "/protected/profile/:id";
+export const COMMENTS = "/protected/comments/:id";
 
 
 
@@ -32,6 +34,7 @@ export const router = createBrowserRouter([
         {path: USERDASH, element: <MyPage />},
         {path: USERS, element: "users"},
         {path: PROFILE, element: "User PROFILE"},
+        {path: COMMENTS, element: <Comments/>}
 
 
 

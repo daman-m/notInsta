@@ -37,4 +37,6 @@ const useFireStore = (collect) => {
     return   { docs }
 }
 
+
+
 export default useFireStore
