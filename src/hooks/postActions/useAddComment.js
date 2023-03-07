@@ -5,7 +5,7 @@ import { projectFireStore } from "../../firebase/config";
 import { useToast } from "@chakra-ui/react";
 import { doc } from "firebase/firestore";
 
-const useAddComment = ({postID}) => {
+const useAddComment = ({postID, uid }) => {
     const [isLoading, setLoading] = useState(false);
     const toast = useToast()
     
@@ -14,7 +14,7 @@ const useAddComment = ({postID}) => {
         const id = uuidv4();
         const date = Date.now()
         const docRef = doc(projectFireStore, "comments", id)
-        await setDoc(docRef, {text , id, postID, date})
+        await setDoc(docRef, {text , id, postID, date, uid})
 
         toast({
             title: "Comment added!",

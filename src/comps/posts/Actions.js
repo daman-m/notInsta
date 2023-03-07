@@ -1,10 +1,12 @@
 import { Flex, IconButton } from "@chakra-ui/react"
-import { FaRegHeart, FaHeart, FaComment, FaTrash } from "react-icons/fa"
+import { FaRegHeart, FaHeart, FaComment, FaTrash, FaRegComment } from "react-icons/fa"
 import useAuth from "../../hooks/auth";
 import useToggleLike from "../../hooks/postActions/useToggleLike";
 import { Link } from "react-router-dom";
 import { PROTECTED } from "../../Routes/routes";
 import useDeletePost from "../../hooks/postActions/useDeletePost";
+import useComments from "../../hooks/postActions/useComments";
+ 
 
 const Actions = ({doc}) => {
     const {user,isLoading} =useAuth();
@@ -16,6 +18,7 @@ const Actions = ({doc}) => {
         id: doc.id
     })    
     const{ deletePost, isLoading: deleteLoading} = useDeletePost(doc.id)
+    const {comments, isLoading:commentsLoading} = useComments(doc.id)
 
     const totalLikes = doc.likes.length;
     return (
@@ -33,10 +36,11 @@ const Actions = ({doc}) => {
                 <IconButton size="md" colorScheme="blue" variant="ghost"
                 as={Link}
                 to={`${PROTECTED}/comments/${doc.id}`}
-                icon={ <FaComment/>}
+                icon={ comments?.length === 0 ?<FaRegComment/> : <FaComment/> }
                 isRound
+                isLoading={commentsLoading}
                 />
-                5
+                {comments?.length}
             </Flex>
                 <IconButton size="md" colorScheme="red" variant="ghost"
                 icon={ <FaTrash/>}

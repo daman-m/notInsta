@@ -31,7 +31,7 @@ const Comments  = () => {
             <Actions doc={post}/>
             </Box>
             <NewComments post={post}/>
-            <CommentList  />
+            <CommentList post={post} />
 
         </Box>
     )
