@@ -7,6 +7,7 @@ import Layout from "../comps/layout";
 import Comments from "../comps/posts/comments/Comments"
 import Profile from "../comps/profile";
 import Users from "../comps/users";
+import ErrorPage from "./ErrorPage";
 
 
 // EXPORTING ROUTES
@@ -21,6 +22,8 @@ export const USERDASH = "/protected/mypage";
 export const USERS = "/protected/users";
 export const PROFILE = "/protected/profile/:id";
 export const COMMENTS = "/protected/comments/:id";
+export const ERROR = "*";
+
 
 
 
@@ -39,7 +42,8 @@ export const router = createBrowserRouter([
         {path: USERDASH, element: <MyPage />},
         {path: USERS, element: <Users/> },
         {path: PROFILE, element: <Profile />},
-        {path: COMMENTS, element: <Comments/>}
+        {path: COMMENTS, element: <Comments/>},
+        {path: ERROR, element: <ErrorPage/>}
 
 
 
