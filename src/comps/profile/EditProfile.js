@@ -1,6 +1,6 @@
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, HStack, FormControl, FormLabel, Button } from "@chakra-ui/react"
 import useAuth from "../../hooks/auth"
-import useUpdateAvatar from "../../hooks/useUpdateAvatar";
+import { useUpdateAvatar } from "../../hooks/user"
 import Avatar from "./Avatar"
 const  EditProfile = ({isOpen, onClose}) => {
 

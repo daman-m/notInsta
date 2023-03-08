@@ -1,11 +1,20 @@
+import { collection, doc, query, updateDoc } from "firebase/firestore"  
+import {useCollectionData, useDocumentData} from "react-firebase-hooks/firestore"
+
 import { useToast } from "@chakra-ui/react";
-import { updateDoc, doc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { projectFireStore, projectStorage } from "../firebase/config";
+import { useState } from "react";
 
-const useUpdateAvatar = (uid) => {
+
+ export const useUser = (id) => {
+    const q = query(doc(projectFireStore, "users", id));
+    const [user, isLoading] = useDocumentData(q)
+    return {user, isLoading} 
+}
+
+export const useUpdateAvatar = (uid) => {
 
     const[isLoading, setLoading] = useState(false)
     const[file, setFile] = useState(null)
@@ -46,8 +55,12 @@ const useUpdateAvatar = (uid) => {
         navigate(0)
     }
 
-
     return { setFile, updateAvatar, isLoading, fileURL: file && URL.createObjectURL(file)}
 }
 
-export default useUpdateAvatar;
+export const useUsers = () => {
+    const [users, isLoading] = useCollectionData(collection(projectFireStore, "users"))
+    
+    console.log(users);
+    return{users, isLoading}
+}

@@ -6,6 +6,7 @@ import UserLogin from "./UserLogin";
 import Layout from "../comps/layout";
 import Comments from "../comps/posts/comments/Comments"
 import Profile from "../comps/profile";
+import Users from "../comps/users";
 
 
 // EXPORTING ROUTES
@@ -24,6 +25,8 @@ export const COMMENTS = "/protected/comments/:id";
 
 
 
+
+
 // CREATING THE BROWSER ROUTER
 
 //These are the actual route elements that the browser router will use, each element consists of a path and element. The path is the string from above, while the element is the appropriate React component.
@@ -34,7 +37,7 @@ export const router = createBrowserRouter([
     {path: REGISTER, element: <NewUser />},
     {path: PROTECTED, element: <Layout />, children:[
         {path: USERDASH, element: <MyPage />},
-        {path: USERS, element: "users"},
+        {path: USERS, element: <Users/> },
         {path: PROFILE, element: <Profile />},
         {path: COMMENTS, element: <Comments/>}
 

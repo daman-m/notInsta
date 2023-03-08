@@ -42,13 +42,13 @@ const Actions = ({doc}) => {
                 />
                 {comments?.length}
             </Flex>
-                <IconButton size="md" colorScheme="red" variant="ghost"
+               {!isLoading && user?.id === doc.uid &&(<IconButton size="md" colorScheme="red" variant="ghost"
                 icon={ <FaTrash/>}
                 isRound
                 ml="auto"
                 onClick={deletePost}
                 isLoading={deleteLoading}
-                />
+                />)}
 
         </Flex>
         

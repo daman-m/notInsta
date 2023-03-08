@@ -1,5 +1,5 @@
 import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
-import useUser from "../../../hooks/useUser";
+import { useUser } from "../../../hooks/user";
 import Avatar from "../../profile/Avatar";
 import formatDistanceToNow from "date-fns/esm/formatDistanceToNow/index.js";
 import UsernameButton from "../../profile/UsernameButton";

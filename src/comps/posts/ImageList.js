@@ -29,6 +29,7 @@ const ImageList = () => {
                         maxH="420px"
                          maxW="420" 
                         objectFit="cover"
+                        m={["0","auto"]}
                         borderBottomRadius="md"
                          src={doc.url} 
                          alt="uploaded pic" />

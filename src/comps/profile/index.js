@@ -4,7 +4,7 @@ import useFireStore from "../../hooks/useFireStore";
 import Avatar from "./Avatar";
 import PostHeader from "../posts/PostHeader";
 import Actions from "../posts/Actions";
-import useUser from "../../hooks/useUser";
+import { useUser } from "../../hooks/user";
 import { format } from "date-fns";
 import EditProfile from "./EditProfile";
 import useAuth from "../../hooks/auth";
@@ -13,7 +13,7 @@ import useAuth from "../../hooks/auth";
 const Profile = () => {
     const {id} = useParams();
     const {docs} = useFireStore('images', id)
-    const {user, isLoading:userLoading} = useUser(id) 
+    const {user, isLoading:userLoading} = useUser(id)
     const {isOpen, onOpen, onClose} = useDisclosure();
     const {user:authUser, isLoading: authLoading} = useAuth();
 
@@ -24,7 +24,7 @@ const Profile = () => {
                 <Avatar size="2xl" user={user} />
 
                 {!authLoading && 
-                (authUser.id === user.id) && 
+                (authUser?.id === user.id) && 
                 (<Button pos="absolute" mb="2" top="6" right="6" colorScheme="blue"
                 onClick={onOpen}>
                     Change Avatar
@@ -48,7 +48,7 @@ const Profile = () => {
             <Divider/>
             <Center my="5" marginTop="10">
                 <Box>
-                { docs && docs.map( doc => (
+                {docs.length === 0 ?  "No posts yet..." :  docs && docs.map( doc => (
                     <Box className="imgContainer" 
                     key={doc.id} 
                     my="5"  
@@ -61,6 +61,7 @@ const Profile = () => {
                         maxH="420px"
                          maxW="420" 
                         objectFit="cover"
+                        m={["0","auto"]}
                         borderBottomRadius="md"
                          src={doc.url} 
                          alt="uploaded pic" />
