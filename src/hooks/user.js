@@ -3,7 +3,7 @@ import {useCollectionData, useDocumentData} from "react-firebase-hooks/firestore
 
 import { useToast } from "@chakra-ui/react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { projectFireStore, projectStorage } from "../firebase/config";
 import { useState } from "react";
 
@@ -19,7 +19,7 @@ export const useUpdateAvatar = (uid) => {
     const[isLoading, setLoading] = useState(false)
     const[file, setFile] = useState(null)
     const toast = useToast()
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     async function updateAvatar(){
 
@@ -52,7 +52,7 @@ export const useUpdateAvatar = (uid) => {
         });
         setLoading(false)
 
-        // navigate(0)
+        navigate(0)
     }
 
     return { setFile, updateAvatar, isLoading, fileURL: file && URL.createObjectURL(file)}
