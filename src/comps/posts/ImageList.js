@@ -27,7 +27,7 @@ const ImageList = () => {
                         <PostHeader uid={doc.uid} date={doc.date} />
                         <Image
                         maxH="420px"
-                         maxW="420" 
+                        maxW={["310","350","420"]}
                         objectFit="cover"
                         m={["0","auto"]}
                         borderBottomRadius="md"

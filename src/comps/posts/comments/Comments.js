@@ -23,7 +23,7 @@ const Comments  = () => {
             <PostHeader uid={post.uid} date={post.date} />
             <Image
             maxH="420px"
-            maxW="420" 
+            maxW={["310","350","420" ]}
             objectFit="cover"
             borderBottomRadius="md"
             src={post.url} 

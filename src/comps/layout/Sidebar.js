@@ -20,7 +20,6 @@ const ActiveUser = () => {
                 </Stack>
             )
           
-
 }
 
 const Sidebar = () => {

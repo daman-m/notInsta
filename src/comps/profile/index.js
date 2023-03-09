@@ -21,18 +21,20 @@ const Profile = () => {
     return (
         <Stack spacing="5">
             <Flex p={["4", "6"]} pos="relative" align="center">
-                <Avatar size="2xl" user={user} />
+                <Avatar size={["lg","2xl"]} user={user} />
 
                 {!authLoading && 
                 (authUser?.id === user.id) && 
-                (<Button pos="absolute" mb="2" top="6" right="6" colorScheme="blue"
-                onClick={onOpen}>
+                (<Button pos="absolute" mb="2" top="6" right="4" colorScheme="blue"
+                onClick={onOpen}
+                size={["sm","md"]}
+                >
                     Change Avatar
                 </Button>)}
 
 
-                <Stack ml="10">
-                    <Text fontSize="2xl">{user.username}</Text>
+                <Stack ml={["3","6","10"]}>
+                    <Text fontSize={["xl","2xl"]}>@{user.username}</Text>
                     <HStack spacing="10">
                         <Text color="gray.700" fontSize={["sm", "lg"]}>
                         Posts: {docs.length}
@@ -59,7 +61,7 @@ const Profile = () => {
                         <PostHeader uid={doc.uid} date={doc.date} />
                         <Image
                         maxH="420px"
-                         maxW="420" 
+                         maxW={["310","350","420" ]}
                         objectFit="cover"
                         m={["0","auto"]}
                         borderBottomRadius="md"

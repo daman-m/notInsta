@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import ProgressBar from "./ProgressBar";
 import { FormControl, HStack, Input, FormLabel, Heading, Button, Box } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/auth";
+import Avatar from "../profile/Avatar";
 
 
 // Step 1 :Upload Forum
@@ -23,6 +25,9 @@ const Upload = () => {
 
 
     // make array of allowed file types to reference in our conditional statement 
+
+    const {user, isLoading } = useAuth();
+
     const types = [ 'image/png', 'image/jpeg'];
 
     //rest fun from react-hook-form
@@ -61,15 +66,25 @@ const Upload = () => {
         reset()
         
     }
-    
+
+    if (isLoading)  {
+        return "Loading..."
+    }
     return (
         <form>
             <HStack margin="5" justify="space-between" py="10px" borderBottom="2px" borderColor="blue.200">
-                <Heading
-                fontSize="2xl"
-                color="blue.200">
-                    New Post
-                </Heading>
+                <HStack >
+                    <Box
+                    display={{base:"block", md:"none"}}>
+                        <Avatar user={user} size="lg"/>
+                    </Box>
+                    <Heading
+                    fontSize="2xl"
+                    color="blue.200">
+                        New Post
+                    </Heading>
+                </HStack>
+                
                 <FormControl width="fit-content">
                 {/* Hidden file input element */}
                     <Input

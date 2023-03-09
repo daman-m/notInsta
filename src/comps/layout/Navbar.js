@@ -1,14 +1,14 @@
-import { Button, Flex, Link } from "@chakra-ui/react"
+import { Button, Flex, HStack, Link } from "@chakra-ui/react"
 import { USERDASH } from "../../Routes/routes";
 import { Link as RouterLink } from "react-router-dom";
 import { useLogout } from "../../hooks/auth";
+import { USERS } from "../../Routes/routes";
 
 const Navbar = () => {
     const {logout, isLoading} = useLogout();
      
     return (
         <Flex
-        // shadow="sm"
         pos="fixed"
         width="full"
         borderTop="8px solid"
@@ -25,15 +25,29 @@ const Navbar = () => {
                 <Link color="blue.200" as={RouterLink} to={USERDASH} fontWeight="bold" fontSize="2rem" > 
                 NotInsta</Link>
 
-                <Button
-                ml="auto"
-                colorScheme="blue"
-                size="sm"
-                onClick={logout}
-                isLoading={isLoading}
-                >
-                    Logout
-                </Button>
+
+                <HStack ml="auto">
+
+                    <Button
+                    variant="solid"
+                    colorScheme="blue"
+                    as={Link}
+                    to={USERS}
+                    mr="3"
+                    size="sm"
+                    display={{base:"flex", md:"none"}}
+                    > All Users 
+                    </Button>
+
+                    <Button
+                    colorScheme="blue"
+                    size="sm"
+                    onClick={logout}
+                    isLoading={isLoading}
+                    >
+                        Logout
+                    </Button>
+                </HStack>
             </Flex>
         </Flex>
     )
