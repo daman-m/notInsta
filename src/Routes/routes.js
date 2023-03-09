@@ -25,11 +25,6 @@ export const COMMENTS = "/protected/comments/:id";
 export const ERROR = "*";
 
 
-
-
-
-
-
 // CREATING THE BROWSER ROUTER
 
 //These are the actual route elements that the browser router will use, each element consists of a path and element. The path is the string from above, while the element is the appropriate React component.
