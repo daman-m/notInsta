@@ -31,7 +31,7 @@ const Navbar = () => {
                     <Button
                     variant="solid"
                     colorScheme="blue"
-                    as={Link}
+                    as={RouterLink}
                     to={USERS}
                     mr="3"
                     size="sm"
