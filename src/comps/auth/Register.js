@@ -82,7 +82,7 @@ const SignIn = () => {
                  <Button 
                  mt="4" 
                  type="submit" 
-                 colorScheme="teal" 
+                 colorScheme="blue" 
                  size="md" 
                  w="full"
                  isLoading={isLoading} 
