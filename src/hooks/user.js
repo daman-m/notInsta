@@ -5,6 +5,7 @@ import { useToast } from "@chakra-ui/react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { projectFireStore, projectStorage } from "../firebase/config";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
  export const useUser = (id) => {
@@ -18,6 +19,7 @@ export const useUpdateAvatar = (uid) => {
     const[isLoading, setLoading] = useState(false)
     const[file, setFile] = useState(null)
     const toast = useToast()
+    const navigate = useNavigate()
 
     async function updateAvatar(){
 
@@ -49,6 +51,8 @@ export const useUpdateAvatar = (uid) => {
             duration: 5000
         });
         setLoading(false)
+
+        navigate(0)
 
     }
 
