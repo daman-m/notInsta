@@ -1,5 +1,6 @@
-import useStorage from "../hooks/useStorage";
+import useStorage from "../../hooks/useStorage";
 import { useEffect } from "react";
+import { Box } from "@chakra-ui/react";
 
 const ProgressBar = ({file, setFile }) => {
     const {url, progress} = useStorage(file);
@@ -12,7 +13,7 @@ const ProgressBar = ({file, setFile }) => {
 
 
     return (
-        <div className="progressBar" style={{width: progress + '%' }}></div>
+        <Box  m={["0","auto"]}maxW="320" bg="blue.200" className="progressBar" style={{width: progress + '%' }}></Box>
     )
 }
 

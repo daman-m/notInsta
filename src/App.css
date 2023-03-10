@@ -1,132 +1,11 @@
-html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
-
-html { box-sizing: border-box;}
-
-
-.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
-
-
-
-
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.wrapper {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-}
 
 .progressBar {
   height: 5px;
-  background-color: #8AAAE5;
   margin: 20px 0;
-  border-radius: 10%;
+  border-radius: 20%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-
-h1 {
-  color: #8AAAE5;
-}
-html {
-  background-color: #424651;
-  color: whitesmoke;
-}
-
-.imgContainer {
-  max-width: 100%;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-
-}
-
-
-
-.galleryFlex {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  margin-top: 50px;
-}
-
-.galleryFlex li {
-  width: calc((100% / 3) - 20px);
-  margin: 0 9px 20px;
-}
-
-input {
-  display: none;
-}
-
-label {
-  background-color: #8AAAE5;
-  color: whitesmoke;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  line-height: 1.4;
-  font-size: 2rem;
-}
-
-label:hover {
-  background-color: whitesmoke;
-  color: #8AAAE5;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  padding: 2px;
-}
-
-form {
-  height: 55px;
-  margin-bottom: 30px;
-}
 
 .toTop {
   background-color: #8AAAE5;
@@ -146,30 +25,27 @@ form {
   cursor: pointer;
   appearance: none;
   border: none;
+  z-index: 10;
 }
 
 .toTop:hover {
-  background-color: whitesmoke;
+  background: #fff;
   color: #8AAAE5;
   font-size: 30px;
 }
+
 
 @media (max-width: 940px ) {
   .galleryFlex li {
     width: calc((100% / 2) - 20px);
     flex-direction: column;
     flex-wrap: nowrap;
-    
-
-  }
-  
-
-  
+  }  
 }
 
 @media (max-width:542px) {
-
   .galleryFlex li {
     width: 100%;
   }
-}
+} 
+
