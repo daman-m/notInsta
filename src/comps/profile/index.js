@@ -28,6 +28,7 @@ const Profile = () => {
                 (<Button pos="absolute" mb="2" top="6" right="4" colorScheme="blue"
                 onClick={onOpen}
                 size={["sm","md"]}
+                marginTop="55px"
                 >
                     Change Avatar
                 </Button>)}
