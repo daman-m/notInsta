@@ -36,6 +36,7 @@ const Profile = () => {
 
                 <Stack ml={["3","6","10"]}>
                     <Text fontSize={["xl","2xl"]}>@{user.username}</Text>
+                    {user.email && <Text fontSize={["xl","2x1"]} display={["none","inline-block"]}>{user.email}</Text>}
                     <HStack spacing="10">
                         <Text color="gray.700" fontSize={["sm", "lg"]}>
                         Posts: {docs.length}
