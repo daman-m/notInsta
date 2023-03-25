@@ -105,7 +105,6 @@ export const useRegister = () => {
                  await setDoc(doc(projectFireStore, "users", res.user.uid), {
                     id: res.user.uid,
                     username: username.toLowerCase(),
-                    userUploads: [],
                     date: Date.now(),
                     avatar: ""
                 });
