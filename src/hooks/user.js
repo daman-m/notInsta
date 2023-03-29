@@ -62,6 +62,5 @@ export const useUpdateAvatar = (uid) => {
 export const useUsers = () => {
     const [users, isLoading] = useCollectionData(collection(projectFireStore, "users"))
     
-    console.log(users);
     return{users, isLoading}
 }
